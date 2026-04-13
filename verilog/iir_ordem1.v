@@ -15,14 +15,18 @@ module iir_ordem1
 	);
 	
 	reg signed  [BITS_IN+14:0] ry = 0;
-	wire signed [BITS_IN+14:0] yz;
-	wire signed [BITS_IN+G_SAIDA_LOG+14:0] yp;
+//	wire signed [BITS_IN+14:0] yz;
+	wire signed [BITS_IN+G_SAIDA_LOG+14:0] acc;
 		
 	
 	
-	assign yz =   b0*in;
-	assign yp = - a1*ry;
-	assign out =   yz + (yp >>> G_SAIDA_LOG);
+//	assign yz =   b0*in;
+//	assign yp = - a1*ry;
+//	assign out =   yz + (yp >>> G_SAIDA_LOG);
+	
+	assign acc = b0*in - a1*ry;
+	
+	assign out = acc >>> G_SAIDA_LOG;
 	
 	always @(posedge clock)
 	begin

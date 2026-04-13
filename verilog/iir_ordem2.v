@@ -21,20 +21,29 @@ module iir_ordem2
 	
 	reg signed  [BITS_IN:0] rx1 = 0;
 	reg signed  [BITS_IN+14:0] ry1 = 0, ry2 = 0;
-	wire signed [BITS_IN+14:0] yz;
-	wire signed [BITS_IN+G_SAIDA_LOG+14:0] yp;
+	
+//	wire signed [BITS_IN+14:0] yz;
+//	wire signed [BITS_IN+G_SAIDA_LOG+14:0] yp;
+
+    wire signed [BITS_IN+G_SAIDA_LOG+14:0] acc;
+    
+    assign acc = b0*in + b1*rx1 - a1*ry1 - a2*ry2;
+    
+    assign out = acc >>> G_SAIDA_LOG;
+
+
 		
 	
 	
-	assign yz =   b0*in + b1*rx1;
-	assign yp = - a1*ry1 - a2*ry2;
-	assign out =   yz + (yp >>> G_SAIDA_LOG);
+//	assign yz =   b0*in + b1*rx1;
+//	assign yp = - a1*ry1 - a2*ry2;
+//	assign out =   yz + (yp >>> G_SAIDA_LOG);
 	
 	always @(posedge clock)
 	begin
-	rx1 <= in;
-	ry2 <= ry1;
-   ry1 <= out;
+        rx1 <= in;
+        ry2 <= ry1;
+        ry1 <= out;
 	end
 	
 	
