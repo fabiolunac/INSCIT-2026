@@ -1,1 +1,2 @@
 Time resolution is 1 ps
+WARNING: File descriptor (-1) passed to $fdisplay is not valid. Please compile the design with -debug for source location information.

@@ -29,18 +29,18 @@ shaper sl
 );
 
 
-//integer data_out;
+integer data_out;
 
-//initial
-//begin
-//	data_out <= $fopen("shaper_tb.txt");
-//end
+initial
+begin
+	data_out <= $fopen("shaper_tb.txt");
+end
 
 
-//always@(posedge clock)
-//begin
-//	$fdisplay(data_out, "%d", out);
-//end
+always@(posedge clock)
+begin
+	$fdisplay(data_out, "%d", out);
+end
 
 
 endmodule
