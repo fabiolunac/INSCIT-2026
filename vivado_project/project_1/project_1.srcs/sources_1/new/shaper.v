@@ -28,11 +28,11 @@ module shaper
 (
 	input  clock, 
 	input  signed [BITS_IN-1:0] in,
-	output signed [BITS_IN+21:0] out
+	output signed [BITS_IN+14:0] out
 );
 
 
-wire signed [BITS_IN+21:0] out1, out2, out3, out4, out5, out6, out7;
+wire signed [BITS_IN+14:0] out1, out2, out3, out4, out5, out6, out7;
  
 // ------------------- Filter 1 -------------------
 iir_ordem1
@@ -97,22 +97,6 @@ iir_ordem2
 );
 
 // ------------------- Filter 5 -------------------
-//iir_ordem2
-//#( 
-//	.BITS_IN(BITS_IN),
-//	.G_ENTRADA(G_ENTRADA),
-//	.G_SAIDA_LOG(15),
-//	.b0(449386),
-//	.b1(-3028),	
-//	.a1(-442),
-//	.a2(1)
-//) iir5
-//(
-//	.clock(clock), 
-//	.in(in),
-//	.out(out5)
-//);
-
 iir_ordem1
 #( 
 	.BITS_IN(BITS_IN),
@@ -149,7 +133,7 @@ iir_ordem1
 	.BITS_IN(BITS_IN),
 	.G_ENTRADA(G_ENTRADA),
 	.G_SAIDA_LOG(15),
-	.b0(17888871),  
+	.b0(-31104),  
 	.a1(0)
 ) iir7
 (
