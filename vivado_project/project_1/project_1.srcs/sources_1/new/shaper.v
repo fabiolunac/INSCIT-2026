@@ -133,7 +133,7 @@ iir_ordem1
 	.BITS_IN(BITS_IN),
 	.G_ENTRADA(G_ENTRADA),
 	.G_SAIDA_LOG(15),
-	.b0(-31104),  
+	.b0(-31260),  
 	.a1(0)
 ) iir7
 (
