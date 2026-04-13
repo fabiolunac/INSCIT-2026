@@ -32,6 +32,9 @@ h = sum(X,2);
 
 % Calcular erro
 err = h - data;
+eRMS = sqrt(mean((h - data).^2));
+
+fprintf('RMS Error: %.4f%%\n', eRMS*100);
 
 % Figura de comparação
 figure;
@@ -42,10 +45,18 @@ xlim([0 100]);
 
 grid on;
 title('Pulse Shaper')
-ylabel('Amplitude Normalized');
+ylabel('Amplitude');
 xlabel('Samples');
 legend('Original Signal', 'FPGA Output')
 
-
 figure;
 stem(err)
+
+figure;
+stem(data)
+ylim([-0.001 0.001])
+xlim([0 200])
+title('Long Negative Tail - FPGA Output')
+ylabel('Amplitude');
+xlabel('Samples');
+grid on
