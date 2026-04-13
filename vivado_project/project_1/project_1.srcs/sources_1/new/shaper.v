@@ -21,7 +21,7 @@
 
 module shaper
 #( 
-	parameter BITS_IN = 10,
+	parameter BITS_IN = 34,
 	parameter G_ENTRADA = 2**32,
 	parameter G_SAIDA_LOG = 15
 )
@@ -32,7 +32,7 @@ module shaper
 );
 
 
-wire signed [BITS_IN+21:0] out1, out2, out3, out4, out5, out6;
+wire signed [BITS_IN+21:0] out1, out2, out3, out4, out5, out6, out7;
  
 // ------------------- Filter 1 -------------------
 iir_ordem1

@@ -1,7 +1,0 @@
-Running: xsim.dir/shaper_tb_behav/xsimk.exe -simmode gui -wdb shaper_tb_behav.wdb -simrunnum 0 -socket 58324
-Design successfully loaded
-Design Loading Memory Usage: 10808 KB (Peak: 10808 KB)
-Design Loading CPU Usage: 31 ms
-Simulation completed
-Simulation Memory Usage: 11768 KB (Peak: 11768 KB)
-Simulation CPU Usage: 109 ms

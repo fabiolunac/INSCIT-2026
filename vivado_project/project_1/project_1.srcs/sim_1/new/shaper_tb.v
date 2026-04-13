@@ -4,8 +4,8 @@ module shaper_tb();
 
 
 reg  clock = 1;
-reg  signed [10-1:0] in = 0;
-wire signed [10+21:0] out;
+reg  signed [34-1:0] in = 0;
+wire signed [34+21:0] out;
 
 
 always #5 clock <= ~clock;
@@ -16,7 +16,7 @@ always@(posedge clock)
 begin
 	cont <= cont + 1;
 	if (cont == 5)
-		in <= (2**32);
+		in <= 64'd4294967296;
 	else
 		in <= 0;
 end
