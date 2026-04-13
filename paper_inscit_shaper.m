@@ -353,7 +353,7 @@ h_f = sum(X_f,2);
 
 % Plotar a resposta filtrada
 figure
-stem(h_f/(Gy*Gx));
+stem(h_f/(Gx));
 hold on;
 stem(h);
 title('Resposta ao Impulso');
@@ -378,7 +378,7 @@ grid on;
 
 % Plotar a resposta filtrada
 figure('DefaultAxesFontSize',24)
-stem((h_f)/(Gy*Gx));
+stem((h_f)/(Gx));
 %legend("Sinal Quantizado","Sinal Original");
 xlim([0,1200]);
 ylim([-0.015,0.01]);

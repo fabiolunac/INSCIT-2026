@@ -27,5 +27,6 @@ function [y, Zn_q, Zd_q] = iir_generico(Zn, Zd, N, Gx, Gy)
         end
         % Divisão por Gy para manter a escala (shift right de 15 bits)
         y(n) = floor(acc / Gy);
+        % y(n) = acc;
     end
 end
