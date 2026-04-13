@@ -11,6 +11,7 @@ Hz = Hz.Hz;
 
 % Dados FPGA
 data = load("shaper_tb.txt");
+data = data/Gx;
 
 
 N = length(data);
@@ -29,8 +30,22 @@ end
 
 h = sum(X,2);
 
+% Calcular erro
+err = h - data;
+
 % Figura de comparação
 figure;
 stem(h)
 hold on
-stem(data/(Gx));
+stem(data);
+xlim([0 100]);
+
+grid on;
+title('Pulse Shaper')
+ylabel('Amplitude Normalized');
+xlabel('Samples');
+legend('Original Signal', 'FPGA Output')
+
+
+figure;
+stem(err)
